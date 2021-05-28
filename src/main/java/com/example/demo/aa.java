@@ -19,12 +19,13 @@ public class aa {
 
     @RequestMapping("/")
 
-    public ModelAndView home() {
+    public String home() {
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("home");
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("home");
 
-        return modelAndView;
+//        return modelAndView;
+        return "Hello";
     }
 
 
