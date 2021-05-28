@@ -36,7 +36,7 @@ public class aa {
         modelAndView.addObject(a);
         modelAndView.addObject(miszkanie);
 
-        modelAndView.setViewName("/mieszkania");
+        modelAndView.setViewName("mieszkania");
         return modelAndView;
 
 
