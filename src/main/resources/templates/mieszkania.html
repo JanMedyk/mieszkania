@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/mieszkania}"   th:object="${mieszkanie}" method="post">
+<label>Kraj</label>
+    <input type="text" th:field="*{kraj}" placeholder="Kraj">
+    <label>Miasto</label>
+<input type="text" th:field="*{miasto}" placeholder="Miasto">
+
+
+    <label>Stan</label>
+    <select th:field="*{stan}">
+        <option default th:value=null> Obojętnie</option>
+        <option th:value=" 'do zamieszkania'">Do zamieszkania</option>
+        <option th:value="'deweloperski'">Deweloperski</option>
+        <option th:value="'do remontu'">Do remontu</option>
+
+    </select>
+<label>Ilosc Pokoi</label>
+<input type="number" th:value="0" th:field="*{pokoje}" placeholder="ilosc pokoi">
+
+    <label>Rodzaj</label>
+    <select th:field="*{rodzaj}">
+        <option th:value=null> Obojętnie</option>
+        <option th:value="'apartament'">apartament</option>
+        <option th:value="'penthhouse'">penthhouse</option>
+        <option th:value="'studio'">studio</option>
+        <option th:value="'kawalerka'">kawalerka</option>
+    </select>
+        <label>Rok budowy</label>
+<input type="number" th:field="*{rok}" placeholder="rok budowy">
+
+    <label>Ogrzewanie</label>
+    <select th:field="*{ogrzewanie}">
+        <option th:value='null'>Obojętnie</option>
+        <option th:value="'gazowe'">gazowe</option>
+        <option th:value="'miejskie'">miejskie</option>
+        <option th:value="'elektryczne'">elektryczne</option>
+
+    </select>
+        <label>Cena</label>
+    <input type="number" step="0.01" th:field="*{Od}" placeholder="Cena od">
+    <input type="number" step="0.01" th:field="*{Do}" placeholder="Cena do">
+        <label>Metraż</label>
+    <input type="number" step="0.01" th:field="*{metrazOd}" placeholder="Metraz Od">
+    <input type="numer" step="0.01" th:field="*{metrazDo}" placeholder="Metraz Do">
+
+    <label>Klimatyzacja</label>
+    <select th:field="*{klimatyzacja}">
+        <option th:value=null> Obojętnie</option>
+        <option th:value="TRUE">Tak</option>
+        <option th:value="FALSE">NIE</option>
+
+    </select>
+    <label>Balkon</label>
+    <select th:field="*{balkon}">
+        <option th:value=null> Obojętnie</option>
+        <option th:value="TRUE">Tak</option>
+        <option th:value="FALSE">NIE</option>
+
+    </select>
+    <button type="submit">szukaj</button>
+</form>
+</tr>
+
+<table id="customers">
+   <thead>
+    <tr>
+        <th>Id</th>
+        <th>Kraj</th>
+        <th>Miasto</th>
+        <th>Cena</th>
+        <th>stan</th>
+        <th>metraz</th>
+        <th>Rodzaj</th>
+        <th>ilosc Pokoi</th>
+        <th>rok budowy</th>
+        <th>ogrzewanie</th>
+        <th>klimatyzacja</th>
+        <th>balkon</th>
+    </tr>
+   </thead>
+    <tr  th:each="s:${mieszkanieList}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.kraj}"></td>
+        <td th:text="${s.miasto}"></td>
+        <td th:text="${s.cena}"></td>
+        <td th:text="${s.stan}"></td>
+        <td th:text="${s.metraz}"></td>
+        <td th:text="${s.rodzaj}"></td>
+        <td th:text="${s.pokoje}"></td>
+        <td th:text="${s.rok}"></td>
+        <td th:text="${s.ogrzewanie}"></td>
+        <td th:text="${s.klimatyzacja}"></td>
+        <td th:text="${s.balkon}"></td>
+
+    </tr>
+
+
+
+
+
+
+</table>
+
+
+
+
+</body>
+</html>
