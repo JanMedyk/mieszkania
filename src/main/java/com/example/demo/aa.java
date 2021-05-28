@@ -22,7 +22,7 @@ public class aa {
     public ModelAndView home() {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/home");
+        modelAndView.setViewName("home");
 
         return modelAndView;
     }
