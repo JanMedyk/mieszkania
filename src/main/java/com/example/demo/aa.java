@@ -90,22 +90,22 @@ public class aa {
         }
         if(mieszkanie.getOd()!=null)
         {
-            a=a.stream().filter(e->e.getCena() >= mieszkanie.getOd() )
+            a=a.stream().filter(e->e.getCena() >= (mieszkanie.getOd()-mieszkanie.getOd()*mieszkanie.getTolerancjaMoney()))
                     .collect(Collectors.toList());
         }
         if(mieszkanie.getDo()!=null)
         {
-            a=a.stream().filter(e->e.getCena()<=mieszkanie.getDo())
+            a=a.stream().filter(e->e.getCena()<=(mieszkanie.getDo()+mieszkanie.getDo()*mieszkanie.getTolerancjaMoney()))
                     .collect(Collectors.toList());
         }
         if(mieszkanie.getMetrazOd()!=null)
         {
-            a=a.stream().filter(e->e.getMetraz()>=mieszkanie.getMetrazOd())
+            a=a.stream().filter(e->e.getMetraz()>=(mieszkanie.getMetrazOd()-mieszkanie.getMetrazOd()*mieszkanie.getTolerancjaMetraz()))
                     .collect(Collectors.toList());
         }
         if(mieszkanie.getMetrazDo()!=null)
         {
-            a=a.stream().filter(e->e.getMetraz()<=mieszkanie.getMetrazDo())
+            a=a.stream().filter(e->e.getMetraz()<=(mieszkanie.getMetrazDo()+mieszkanie.getMetrazDo()*mieszkanie.getTolerancjaMetraz()))
                     .collect(Collectors.toList());
         }
 

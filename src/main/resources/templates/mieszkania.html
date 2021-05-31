@@ -71,9 +71,25 @@
         <label>Cena</label>
     <input type="number" step="0.01" th:field="*{Od}" placeholder="Cena od">
     <input type="number" step="0.01" th:field="*{Do}" placeholder="Cena do">
+    <label> Tolerancja dla ceny</label>
+    <select th:field="*{tolerancjaMoney}">
+        <option th:value="0">0%</option>
+        <option th:value="0.05">5%</option>
+        <option th:value="0.10">10%</option>
+        <option th:value="0.15">15%</option>
+
+    </select>
         <label>Metraż</label>
     <input type="number" step="0.01" th:field="*{metrazOd}" placeholder="Metraz Od">
     <input type="number" step="0.01" th:field="*{metrazDo}" placeholder="Metraz Do">
+    <label>Tolerancja dla Metrażu</label>
+    <select th:field="*{tolerancjaMetraz}">
+        <option th:value="0">0%</option>
+        <option th:value="0.05">5%</option>
+        <option th:value="0.10">10%</option>
+        <option th:value="0.15">15%</option>
+
+    </select>
 
     <label>Klimatyzacja</label>
     <select th:field="*{klimatyzacja}">

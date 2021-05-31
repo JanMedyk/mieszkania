@@ -32,10 +32,14 @@ public class Mieszkanie {
     private Double Od;
     @Transient
     private Double Do;
+    @Transient
+    private Double TolerancjaMoney;
 @Transient
     private Float MetrazOd;
 @Transient
     private Float MetrazDo;
+    @Transient
+    private Double TolerancjaMetraz;
 
 
 }
